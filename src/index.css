@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    background-color: #030712;
+    touch-action: manipulation;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    overscroll-behavior-x: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #030712;
+    color: #f8fafc;
+    overflow-x: hidden;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    touch-action: manipulation;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #root {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Support mobile notch, dynamic island, and Android bottom gesture bar */
+  .safe-area-bottom {
+    padding-bottom: max(0.75rem, env(safe-area-inset-bottom, 0px));
+  }
+
+  .safe-area-top {
+    padding-top: max(0.5rem, env(safe-area-inset-top, 0px));
+  }
+
+  /* Prevent text input zooming on iOS Safari (requires font-size >= 16px) */
+  input[type="text"],
+  input[type="number"],
+  input[type="search"],
+  input[type="password"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  @media (min-width: 640px) {
+    input[type="text"],
+    input[type="number"],
+    input[type="search"],
+    input[type="password"],
+    textarea,
+    select {
+      font-size: inherit !important;
+    }
+  }
+}
+
+/* ==========================================================================
+   FUTURISTIC 3D & GLASSMORPHISM DESIGN SYSTEM
+   ========================================================================== */
+
+/* Premium Translucent Dark Glass Card */
+.glass-card {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.7) 0%, rgba(30, 27, 75, 0.4) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.glass-card-hover:hover {
+  transform: translateY(-3px);
+  border-color: rgba(34, 211, 238, 0.5);
+  box-shadow: 0 12px 35px -5px rgba(99, 102, 241, 0.3), 0 0 20px rgba(34, 211, 238, 0.25);
+}
+
+/* Neon Glow Accents */
+.neon-glow-cyan {
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.45);
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.45);
+}
+
+.neon-glow-amber {
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.45);
+}
+
+/* Shimmer animated gradient text */
+@keyframes gradient-x {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 6s ease infinite;
+}
+
+/* Aurora Drift Keyframe */
+@keyframes aurora-drift {
+  0% { transform: translate3d(0, 0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate3d(20px, -20px, 0) scale(1.08) rotate(3deg); }
+  100% { transform: translate3d(-15px, 15px, 0) scale(0.96) rotate(-2deg); }
+}
+
+.animate-aurora-drift {
+  animation: aurora-drift 24s ease-in-out infinite alternate;
+}
+
+/* 3D Cyber Grid Flow */
+@keyframes grid-depth {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 54px; }
+}
+
+.animate-grid-depth {
+  animation: grid-depth 8s linear infinite;
+}
+
+/* Big Glowing Orb Floats */
+@keyframes orb-float-1 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(60px, 45px, 0) scale(1.15); }
+  100% { transform: translate3d(-35px, 25px, 0) scale(0.92); }
+}
+
+.animate-orb-float-1 {
+  animation: orb-float-1 16s ease-in-out infinite alternate;
+}
+
+@keyframes orb-float-2 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-50px, 40px, 0) scale(1.12); }
+  100% { transform: translate3d(30px, -35px, 0) scale(0.9); }
+}
+
+.animate-orb-float-2 {
+  animation: orb-float-2 20s ease-in-out infinite alternate;
+}
+
+@keyframes orb-float-3 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(45px, -40px, 0) scale(1.18); }
+  100% { transform: translate3d(-40px, 30px, 0) scale(0.95); }
+}
+
+.animate-orb-float-3 {
+  animation: orb-float-3 18s ease-in-out infinite alternate;
+}
+
+@keyframes orb-float-4 {
+  0% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(-40px, -45px, 0) scale(1.14); }
+  100% { transform: translate3d(35px, 20px, 0) scale(0.94); }
+}
+
+.animate-orb-float-4 {
+  animation: orb-float-4 22s ease-in-out infinite alternate;
+}
+
+/* Subtle Card Glow Pulse */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.03); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+/* Hide scrollbar for clean native app look */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

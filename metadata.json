@@ -1,0 +1,6 @@
+{
+  "name": "JHX Digital Shop - Android App & Store",
+  "description": "Complete Digital Shop for software, UI kits, templates & graphics with 1-tap Android install, native Android Studio APK package, and seamless mobile commerce.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
